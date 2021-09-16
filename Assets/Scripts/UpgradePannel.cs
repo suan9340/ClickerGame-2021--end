@@ -7,7 +7,7 @@ public class UpgradePannel : MonoBehaviour
 {
     [SerializeField] private Text jellyNameText = null;
     [SerializeField] private Text jellyPriceText = null;
-    [SerializeField] private Text jellyNumberText = null;
+    [SerializeField] private Text jellyAmountText = null;
     [SerializeField] private Button purChaseButton = null;
     [SerializeField] private Image jellyImage = null;
     [SerializeField] private Sprite[] jellySprite;
@@ -24,7 +24,7 @@ public class UpgradePannel : MonoBehaviour
     {
         jellyNameText.text = jelly.JellyName;
         jellyPriceText.text = $"{jelly.price} 젤리조각";
-        jellyNumberText.text = $"{jelly.amount}";
+        jellyAmountText.text = $"{jelly.amount}";
         jellyImage.sprite = jellySprite[jelly.JellyNumber];
     }
 
@@ -35,8 +35,10 @@ public class UpgradePannel : MonoBehaviour
             return;
         }
         GameManager.Instance.CurrentUser.jellyPiece -= jelly.price;
-        jelly.price = (long)(jelly.price * 1.25f);
+        jelly.price = (long)(jelly.price * 1.1f);
+        jelly.amount++;
         UpdateUI();
         GameManager.Instance.UI.UpdateJellyPanel();
+        //Debug.Log("아이템 구매 성공");
     }
 }

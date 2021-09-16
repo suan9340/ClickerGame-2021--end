@@ -16,18 +16,26 @@ public class GameManager : MonoSingleTon<GameManager>
     private void Awake()
     {
         // 안드로이드 빌드시 Application.persistentDataPath로 수정해야 빌드됨
-        SAVE_PATH = Application.persistentDataPath + "/Save";
+        SAVE_PATH = Application.dataPath + "/Save";
         if (Directory.Exists(SAVE_PATH) == false)
         {
             Directory.CreateDirectory(SAVE_PATH);
         }
 
         InvokeRepeating("SaveToJson", 1f, 50f);
+        InvokeRepeating("EarnJellyPerSecond", 0f, 1f);
         LoadFromJson();
         uiManager = GetComponent<UIManager>();
     }
 
-   
+   private void EarnJellyPerSecond()
+    {
+        foreach(Jelly jelly in user.jellyList)
+        {
+            user.jellyPiece += jelly.jellyPerSecond * jelly.amount;
+        }
+        UI.UpdateJellyPanel();
+    }
     private void LoadFromJson()
     {
         string json = "";

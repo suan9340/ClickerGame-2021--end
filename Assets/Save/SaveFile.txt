@@ -1,14 +1,21 @@
 ﻿{
     "userName": "우수안",
-    "jellyPiece": 21,
+    "jellyPiece": 17,
     "jellyPerClick": 1,
     "jellyList": [
         {
             "JellyNumber": 0,
-            "JellyName": "qwe",
+            "JellyName": "젤",
             "amount": 0,
-            "firePerSecond": 2,
-            "price": 1
+            "jellyPerSecond": 1,
+            "price": 10
+        },
+        {
+            "JellyNumber": 1,
+            "JellyName": "젤리",
+            "amount": 3,
+            "jellyPerSecond": 3,
+            "price": 57
         }
     ]
 }
