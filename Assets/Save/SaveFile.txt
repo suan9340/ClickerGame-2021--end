@@ -1,0 +1,14 @@
+﻿{
+    "userName": "우수안",
+    "jellyPiece": 21,
+    "jellyPerClick": 1,
+    "jellyList": [
+        {
+            "JellyNumber": 0,
+            "JellyName": "qwe",
+            "amount": 0,
+            "firePerSecond": 2,
+            "price": 1
+        }
+    ]
+}

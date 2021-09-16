@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class User 
 {
     public string userName;
-    public long fireBall;
-    public long firePerClick;
-    public List<Items> itemList=new List<Items>();
+    public long jellyPiece;
+    public long jellyPerClick;
+    public List<Jelly> jellyList=new List<Jelly>();
 }

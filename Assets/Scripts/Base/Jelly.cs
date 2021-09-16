@@ -1,7 +1,8 @@
 [System.Serializable]
-public class Items 
+public class Jelly 
 {
-    public string ItemName;
+    public int JellyNumber; 
+    public string JellyName;
     public int amount;
     public long firePerSecond;
     public long price;

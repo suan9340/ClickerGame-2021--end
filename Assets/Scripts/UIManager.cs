@@ -5,39 +5,42 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private GameObject soundBtn;
-    [SerializeField] private GameObject homeBtn;
-    [SerializeField] private GameObject questionBtn;
+    [SerializeField] private Text fireText = null;
+    [SerializeField] private GameObject upgradePannelTemplate = null;
 
-    private bool isSetting;
-    private bool isClick;
-
-    public void ClickSettingButton()
+    private List<UpgradePannel> upgradePannel = new List<UpgradePannel>();
+    private void Start()
     {
-        if (isSetting) return;
-        isSetting = !isSetting;
+        UpdateJellyPanel();
+        CreatePannels();
+    }
 
-        if(isSetting)
+    private void CreatePannels()
+    {
+        GameObject newPannel = null;
+        UpgradePannel newPannelComponent = null;
+
+        foreach(Jelly jelly in GameManager.Instance.CurrentUser.jellyList)
         {
-            ShowSetting();
+            newPannel = Instantiate(upgradePannelTemplate, upgradePannelTemplate.transform.parent);
+            newPannelComponent = newPannel.GetComponent<UpgradePannel>();
+            newPannelComponent.SetValue(jelly);
+            newPannel.SetActive(true);
+            upgradePannel.Add(newPannelComponent);
         }
-        else
-        {
-            HideSetting();
-        }
+
+    }
+    public void OnClickJelly()
+    {
+        GameManager.Instance.CurrentUser.jellyPiece += GameManager.Instance.CurrentUser.jellyPerClick;
+        UpdateJellyPanel();
+        //Debug.Log("클릭함");
     }
 
-    private void ShowSetting()
+    public void UpdateJellyPanel()
     {
-        soundBtn.SetActive(true);
-        homeBtn.SetActive(true);
-        questionBtn.SetActive(true);
+        fireText.text = $" {GameManager.Instance.CurrentUser.jellyPiece} 젤리조각 \n";
     }
 
-    private void HideSetting()
-    {
-        soundBtn.SetActive(false);
-        homeBtn.SetActive(false);
-        questionBtn.SetActive(false);
-    }
+
 }
