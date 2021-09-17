@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private Text fireText = null;
+    [SerializeField] private Text jellyText = null;
+    [SerializeField] private Text jellyPerSecond = null;
     [SerializeField] private GameObject upgradePannelTemplate = null;
     [SerializeField] private Transform pool = null;
     [SerializeField] private JellyText jellyTextTemplate = null;
@@ -53,7 +54,8 @@ public class UIManager : MonoBehaviour
 
     public void UpdateJellyPanel()
     {
-        fireText.text = $" {GameManager.Instance.CurrentUser.jellyPiece} Á©¸®Á¶°¢ \n";
+        jellyText.text = $" {GameManager.Instance.CurrentUser.jellyPiece} Á©¸®Á¶°¢ \n";
+        jellyPerSecond.text = $"{GameManager.Instance.CurrentUser.jellyPerAuto} ÀÚµ¿ »ý¼º °¹¼ö\n";
     }
 
 

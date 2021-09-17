@@ -23,7 +23,15 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] private GameObject InfoOutBtn;
     private bool isGameInfoClick;
 
-
+    private void TimeStop()
+    {
+        Time.timeScale = 0f;
+    }
+    private void TimeStart()
+    {
+        Time.timeScale = 1f;
+    }
+   
     #region Setting버튼
     public void ClickSettingButton()
     {
@@ -61,10 +69,12 @@ public class ButtonManager : MonoBehaviour
         if (isHomeSettingClick)
         {
             homeSettingChang.SetActive(true);
+            TimeStop();
         }
         else
         {
             homeSettingChang.SetActive(false);
+            TimeStart();
         }
     }
 
@@ -72,11 +82,13 @@ public class ButtonManager : MonoBehaviour
     {
         isHomeSettingClick = !isHomeSettingClick;
         homeSettingChang.SetActive(false);
+        TimeStart();
     }
 
     public void ClickGoMenu()
     {
         isHomeSettingClick = !isHomeSettingClick;
+        Debug.Log("Menu로 돌아감");
         SceneManager.LoadScene("Menu");
     } 
     #endregion
@@ -87,10 +99,12 @@ public class ButtonManager : MonoBehaviour
         if(isGameInfoClick)
         {
             gameInfoChang.SetActive(true);
+            TimeStop();
         }
         else
         {
             gameInfoChang.SetActive(false);
+            TimeStart();
         }
     }
 
@@ -98,5 +112,6 @@ public class ButtonManager : MonoBehaviour
     {
         isGameInfoClick = !isGameInfoClick;
         gameInfoChang.SetActive(false);
+        TimeStart();
     }
 }
