@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private Text jellyText = null;
     [SerializeField] private Text jellyPerSecond = null;
+    [SerializeField] private Text jellyClickPer = null;
     [SerializeField] private GameObject upgradePannelTemplate = null;
     [SerializeField] private Transform pool = null;
     [SerializeField] private JellyText jellyTextTemplate = null;
@@ -55,7 +56,8 @@ public class UIManager : MonoBehaviour
     public void UpdateJellyPanel()
     {
         jellyText.text = $" {GameManager.Instance.CurrentUser.jellyPiece} 젤리조각 \n";
-        jellyPerSecond.text = $"{GameManager.Instance.CurrentUser.jellyPerAuto} 자동 생성 갯수\n";
+        jellyPerSecond.text = $"{GameManager.Instance.CurrentUser.jellyPerAuto} 자동 생성\n";
+        jellyClickPer.text = $"{GameManager.Instance.CurrentUser.jellyPerClick} 클릭\n";
     }
 
 
