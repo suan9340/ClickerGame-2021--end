@@ -53,8 +53,5 @@ public class StoreUI : MonoBehaviour
     #endregion
 
     // 자신 부모 창을 끄느 코드
-    public void OutChang()
-    {
-        
-    }
+    
 }

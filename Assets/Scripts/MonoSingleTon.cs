@@ -26,7 +26,7 @@ public class MonoSingleTon<T> : MonoBehaviour where T : MonoBehaviour
                     if (_instance == null)
                     {
                         _instance = new GameObject(typeof(T).ToString()).AddComponent<T>();
-                        DontDestroyOnLoad(_instance);
+                        //DontDestroyOnLoad(_instance);
                     }
                 }
                 return _instance;

@@ -2,116 +2,111 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class ButtonManager : MonoBehaviour
 {
-    //----------세팅 변수----------//
-    [Header("세팅 변수")]
-    [SerializeField] private GameObject soundBtn;
-    [SerializeField] private GameObject homeBtn;
-    [SerializeField] private GameObject gameInfoBtn;
-    private bool isSettingClick;
+    //---------창 눌렀을 때 변수---------//
+    [Header("창 눌렀을 때")]
+    [SerializeField] private GameObject settingChang;
 
-    //----------홈 눌렀을때 세팅 변수----------//
-    [Header("홈 눌렀을 때 변수")]
-    [SerializeField] private GameObject homeSettingChang;
-    private bool isHomeSettingClick;
+    //---------기타 등등---------//
+    [Header("뒤에 클릭 막는 오브제")]
+    [SerializeField] private GameObject hide;
 
-    //----------게임 인포 눌렀을때 세팅 변수----------//
-    [Header("게임 인포 눌렀을 때 변수")]
-    [SerializeField] private GameObject gameInfoChang;
-    [SerializeField] private GameObject InfoOutBtn;
-    private bool isGameInfoClick;
+    //---------저장---------//
+    [Header("나가기변수")]
+    [SerializeField] private GameObject quitImage;
+    [SerializeField] private GameObject reallyQuit;
+    //---------저장---------//
+    [Header("저장변수")]
+    [SerializeField] private GameObject saveImage;
 
-    private void TimeStop()
+
+    #region 기타등등
+    private void DotClickBack()
     {
-        Time.timeScale = 0f;
-    }
-    private void TimeStart()
-    {
-        Time.timeScale = 1f;
-    }
-   
-    #region Setting버튼
-    public void ClickSettingButton()
-    {
-        isSettingClick = !isSettingClick;
-
-        if (isSettingClick)
-        {
-            ShowSetting();
-        }
-        else
-        {
-            HideSetting();
-        }
+        hide.SetActive(true);
     }
 
-    private void ShowSetting()
+    private void ClickBack()
     {
-        soundBtn.SetActive(true);
-        homeBtn.SetActive(true);
-        gameInfoBtn.SetActive(true);
+        hide.SetActive(false);
+    } 
+    #endregion
+    #region 창 눌렀을 때
+    public void ClickChang()
+    {
+        
+        settingChang.transform.DOMove(new Vector3(0f, 0f, 0f), 1f);
+        Invoke("Close", 5f);
     }
 
-    private void HideSetting()
+    public void Close()
     {
-        soundBtn.SetActive(false);
-        homeBtn.SetActive(false);
-        gameInfoBtn.SetActive(false);
-    }
+        Vector3 pos = new Vector3(0f, -0.6f, 0f);
+        settingChang.transform.DOMove(pos, 1f);
+    } 
     #endregion
 
-    #region home 눌렀을 때
-    public void ClickHomeButton()
+    #region 나가기
+
+    public void ClickQuit()
     {
-        isHomeSettingClick = !isHomeSettingClick;
-        if (isHomeSettingClick)
-        {
-            homeSettingChang.SetActive(true);
-            TimeStop();
-        }
-        else
-        {
-            homeSettingChang.SetActive(false);
-            TimeStart();
-        }
+        quitImage.SetActive(true);
+        DotClickBack();
     }
 
     public void ClickContinue()
     {
-        isHomeSettingClick = !isHomeSettingClick;
-        homeSettingChang.SetActive(false);
-        TimeStart();
+        quitImage.SetActive(false);
+        ClickBack();
     }
 
-    public void ClickGoMenu()
+    public void ClcikOutGame()
     {
-        isHomeSettingClick = !isHomeSettingClick;
-        Debug.Log("Menu로 돌아감");
-        SceneManager.LoadScene("Menu");
-    } 
+        reallyQuit.SetActive(true);
+        DotClickBack();
+    }
+
+    public void reallyQYES()
+    {
+        Debug.Log("게임 종료");
+        Application.Quit();
+    }
+
+    public void reallyQNO()
+    {
+        reallyQuit.SetActive(false);
+    }
+
     #endregion
 
-    public void ClickGameInfo()
+
+    #region 저장
+    public void ClickSave()
     {
-        isGameInfoClick = !isGameInfoClick;
-        if(isGameInfoClick)
-        {
-            gameInfoChang.SetActive(true);
-            TimeStop();
-        }
-        else
-        {
-            gameInfoChang.SetActive(false);
-            TimeStart();
-        }
+        //Debug.Log("저장됨");
+        GameManager.Instance.SaveToJson();
+        saveImage.SetActive(true);
+        Invoke("A", 2f);
+    }
+    private void A()
+    {
+        saveImage.SetActive(false);
+    }
+    #endregion
+
+
+    public void ClickjellyDoGam()
+    {
+
     }
 
-    public void ClickOutGameInfo()
+    public void ClickResetGame()
     {
-        isGameInfoClick = !isGameInfoClick;
-        gameInfoChang.SetActive(false);
-        TimeStart();
+
     }
+
+   
 }

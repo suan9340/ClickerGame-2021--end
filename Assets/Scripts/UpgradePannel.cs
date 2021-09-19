@@ -36,7 +36,7 @@ public class UpgradePannel : MonoBehaviour
         }
         GameManager.Instance.CurrentUser.jellyPiece -= jelly.price;
         GameManager.Instance.CurrentUser.jellyPerAuto += jelly.jellyPerSecond;
-        jelly.price = (long)(jelly.price * 1.1f);
+        jelly.price = (long)(jelly.price * 1.25f);
         jelly.amount++;
         UpdateUI();
         GameManager.Instance.UI.UpdateJellyPanel();

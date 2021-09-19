@@ -46,7 +46,7 @@ public class GameManager : MonoSingleTon<GameManager>
         }
     }
 
-    private void SaveToJson()
+    public void SaveToJson()
     {
         SAVE_PATH = Application.dataPath + "/Save";
         string json = JsonUtility.ToJson(user, true);
