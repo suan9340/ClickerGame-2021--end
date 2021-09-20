@@ -15,6 +15,7 @@ public class StoreUI : MonoBehaviour
     private bool isItemBuy;
 
     #region 젤리구매
+    // 젤리 구매 눌렀을 때
     public void ClickjellyBuy()
     {
         isJellyBuy = !isJellyBuy;
@@ -25,8 +26,10 @@ public class StoreUI : MonoBehaviour
         }
     }
 
+    // 젤리 구매 나가기 눌렀을 때
     public void OutJellyBey()
     {
+        Debug.Log("qwe");
         isJellyBuy = !isJellyBuy;
         jellyBuyChang.SetActive(false);
         store.SetActive(true);
@@ -34,6 +37,7 @@ public class StoreUI : MonoBehaviour
     #endregion
 
     #region 아이템구매
+    // 아이템 구매 눌렀을 때
     public void ClickItemBuy()
     {
         isItemBuy = !isItemBuy;
@@ -44,6 +48,7 @@ public class StoreUI : MonoBehaviour
         }
     }
 
+    // 아이템 구매 나가기 눌렀을 때
     public void OutItemBuy()
     {
         isItemBuy = !isItemBuy;
@@ -51,7 +56,4 @@ public class StoreUI : MonoBehaviour
         store.SetActive(true);
     }
     #endregion
-
-    // 자신 부모 창을 끄느 코드
-    
 }

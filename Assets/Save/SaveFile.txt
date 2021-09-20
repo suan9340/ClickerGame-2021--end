@@ -1,15 +1,15 @@
 ﻿{
     "userName": "우수안",
-    "jellyPiece": 44059,
+    "jellyPiece": 35416,
     "jellyPerClick": 1,
-    "jellyPerAuto": 102,
+    "jellyPerAuto": 133,
     "jellyList": [
         {
             "JellyNumber": 1,
             "JellyName": "젤",
-            "amount": 15,
+            "amount": 19,
             "jellyPerSecond": 1,
-            "price": 78
+            "price": 188
         },
         {
             "JellyNumber": 2,
@@ -21,9 +21,9 @@
         {
             "JellyNumber": 3,
             "JellyName": "젤리냐미냐밍",
-            "amount": 16,
+            "amount": 25,
             "jellyPerSecond": 3,
-            "price": 3508
+            "price": 26127
         }
     ]
 }
