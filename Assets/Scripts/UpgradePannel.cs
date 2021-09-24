@@ -23,7 +23,7 @@ public class UpgradePannel : MonoBehaviour
     public void UpdateUI()
     {
         jellyNameText.text = jelly.JellyName;
-        jellyPriceText.text = $"{jelly.price} Á©¸®Á¶°¢";
+        jellyPriceText.text = $"{jelly.price}°³";
         jellyAmountText.text = $"{jelly.amount}";
         jellyImage.sprite = jellySprite[jelly.JellyNumber];
     }
