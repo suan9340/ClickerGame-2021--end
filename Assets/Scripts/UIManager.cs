@@ -59,7 +59,7 @@ public class UIManager : MonoBehaviour
     {
         jellyText.text = $" {GameManager.Instance.CurrentUser.jellyPiece}개 \n";
         jellyPerSecond.text = $"{GameManager.Instance.CurrentUser.jellyPerAuto}개 자동 생성\n";
-        jellyClickPer.text = $"{GameManager.Instance.CurrentUser.jellyPerClick} 클릭\n";
+        //jellyClickPer.text = $"{GameManager.Instance.CurrentUser.jellyPerClick} 클릭\n";
     }
 
 

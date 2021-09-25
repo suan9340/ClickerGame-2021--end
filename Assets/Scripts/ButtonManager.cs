@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using DG.Tweening;
 
 public class ButtonManager : MonoBehaviour
 {
@@ -19,7 +19,9 @@ public class ButtonManager : MonoBehaviour
 
     //----------- 설정 눌렀을 때 변수 -----------//
     [Header("설정 눌렀을 때")]
+    [SerializeField] private GameObject settingThis;
     [SerializeField] private GameObject settingObject;
+    [SerializeField] private Sprite[] settingImage;
     private bool isSetting;
 
     //----------- 뽑기 눌렀을 때 변수 -----------//
@@ -53,12 +55,6 @@ public class ButtonManager : MonoBehaviour
         randomObject.SetActive(false);
     }
 
-    // 불 리셋함수
-    private void ResetBool()
-    {
-        isStore = true;
-        isRand = true;
-    }
     #endregion
 
     #region 상점
@@ -130,17 +126,15 @@ public class ButtonManager : MonoBehaviour
     // 설정 눌렀을 떄
     public void ClickSetting()
     {
-        ResetChang();
-
         isSetting = !isSetting;
         if(isSetting)
         {
-            DonClickBack();
+            settingThis.GetComponent<Image>().sprite = settingImage[0];
             settingObject.SetActive(true);
         }
         else
         {
-            CanClickBack();
+            settingThis.GetComponent<Image>().sprite = settingImage[1];
             settingObject.SetActive(false);
         }
     }
