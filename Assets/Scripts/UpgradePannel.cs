@@ -42,4 +42,6 @@ public class UpgradePannel : MonoBehaviour
         GameManager.Instance.UI.UpdateJellyPanel();
         //Debug.Log("아이템 구매 성공");
     }
+
+
 }

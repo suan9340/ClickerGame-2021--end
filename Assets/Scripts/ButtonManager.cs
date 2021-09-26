@@ -48,13 +48,7 @@ public class ButtonManager : MonoBehaviour
     } 
     
     // 다른 창 리셋함수
-    private void ResetChang()
-    {
-        storeObject.SetActive(false);
-        settingObject.SetActive(false);
-        randomObject.SetActive(false);
-    }
-
+   
     #endregion
 
     #region 상점
@@ -62,20 +56,23 @@ public class ButtonManager : MonoBehaviour
     // 상점버튼 눌렀을 때
     public void ClickStore()
     {
-        ResetChang();
 
         isStore = !isStore;
         if(isStore)
         {
-            DonClickBack();
             storeObject.SetActive(true);
         }
         else
         {
-            CanClickBack();
             storeObject.SetActive(false);
         }
         
+    }
+
+    public void OutStore()
+    {
+        isStore = !isStore;
+        storeObject.SetActive(false);
     }
 
     // 상점 안에서 아이템 구매 눌렀을 때
@@ -106,7 +103,6 @@ public class ButtonManager : MonoBehaviour
     // 랜덤뽑기 눌렀을 때
     public void ClickRandom()
     {
-        ResetChang();
 
         isRand = !isRand;
         if(isRand)
@@ -144,7 +140,6 @@ public class ButtonManager : MonoBehaviour
     // 도감 눌렀을 때
     public void ClickDoGam()
     {
-        ResetChang();
         DonClickBack();
         doGamObject.SetActive(true);
        

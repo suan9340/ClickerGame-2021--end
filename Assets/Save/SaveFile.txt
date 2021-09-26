@@ -1,15 +1,15 @@
 ﻿{
     "userName": "우수안",
-    "jellyPiece": 80,
+    "jellyPiece": 851,
     "jellyPerClick": 1,
     "jellyPerAuto": 0,
     "jellyList": [
         {
             "JellyNumber": 0,
             "JellyName": "열심히 브리핑하기",
-            "amount": 0,
-            "jellyPerSecond": 0,
-            "price": 10
+            "amount": 6,
+            "jellyPerSecond": 1,
+            "price": 33
         },
         {
             "JellyNumber": 1,
