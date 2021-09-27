@@ -1,15 +1,15 @@
 ﻿{
     "userName": "우수안",
-    "jellyPiece": 27,
+    "jellyPiece": 209,
     "jellyPerClick": 1,
-    "jellyPerAuto": 0,
+    "jellyPerAuto": 6,
     "jellyList": [
         {
             "JellyNumber": 0,
             "JellyName": "흑화한 제트",
-            "amount": 0,
+            "amount": 6,
             "jellyPerSecond": 1,
-            "price": 10
+            "price": 33
         },
         {
             "JellyNumber": 1,
