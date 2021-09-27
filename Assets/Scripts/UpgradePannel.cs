@@ -26,10 +26,13 @@ public class UpgradePannel : MonoBehaviour
         jellyPriceText.text = $"{jelly.price}개";
         jellyAmountText.text = $"{jelly.amount}";
         jellyImage.sprite = jellySprite[jelly.JellyNumber];
+        InvokeRepeating("A", 0f, 1f);
     }
+
 
     public void OnClickPurChase()
     {
+        
         if (GameManager.Instance.CurrentUser.jellyPiece < jelly.price)
         {
             return;
@@ -41,7 +44,11 @@ public class UpgradePannel : MonoBehaviour
         UpdateUI();
         GameManager.Instance.UI.UpdateJellyPanel();
         //Debug.Log("아이템 구매 성공");
+        A();
     }
-
+    private void A()
+    {
+        purChaseButton.interactable = jelly.price < GameManager.Instance.CurrentUser.jellyPiece;
+    }
 
 }

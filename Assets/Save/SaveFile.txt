@@ -1,92 +1,29 @@
 ﻿{
     "userName": "우수안",
-    "jellyPiece": 851,
+    "jellyPiece": 27,
     "jellyPerClick": 1,
     "jellyPerAuto": 0,
     "jellyList": [
         {
             "JellyNumber": 0,
-            "JellyName": "열심히 브리핑하기",
-            "amount": 6,
+            "JellyName": "흑화한 제트",
+            "amount": 0,
             "jellyPerSecond": 1,
-            "price": 33
+            "price": 10
         },
         {
             "JellyNumber": 1,
-            "JellyName": "뇌절하지 않기 ",
+            "JellyName": "미소녀가 된 아스트라",
             "amount": 0,
-            "jellyPerSecond": 0,
+            "jellyPerSecond": 2,
             "price": 20
         },
         {
             "JellyNumber": 2,
-            "JellyName": "스킬 활용하기",
+            "JellyName": "코로나가 무서운 스카이",
             "amount": 0,
-            "jellyPerSecond": 0,
+            "jellyPerSecond": 3,
             "price": 50
-        },
-        {
-            "JellyNumber": 3,
-            "JellyName": "게임에 시간투자하기",
-            "amount": 0,
-            "jellyPerSecond": 0,
-            "price": 100
-        },
-        {
-            "JellyNumber": 4,
-            "JellyName": "적극적으로 참여하기",
-            "amount": 0,
-            "jellyPerSecond": 0,
-            "price": 200
-        },
-        {
-            "JellyNumber": 5,
-            "JellyName": "에임연습하기",
-            "amount": 0,
-            "jellyPerSecond": 0,
-            "price": 400
-        },
-        {
-            "JellyNumber": 6,
-            "JellyName": "상대한테 도발하기",
-            "amount": 0,
-            "jellyPerSecond": 0,
-            "price": 600
-        },
-        {
-            "JellyNumber": 7,
-            "JellyName": "버스탑승하기",
-            "amount": 0,
-            "jellyPerSecond": 0,
-            "price": 800
-        },
-        {
-            "JellyNumber": 8,
-            "JellyName": "현질하기",
-            "amount": 0,
-            "jellyPerSecond": 0,
-            "price": 1000
-        },
-        {
-            "JellyNumber": 9,
-            "JellyName": "대리받기",
-            "amount": 0,
-            "jellyPerSecond": 0,
-            "price": 1500
-        },
-        {
-            "JellyNumber": 10,
-            "JellyName": "어뷰징하기",
-            "amount": 0,
-            "jellyPerSecond": 0,
-            "price": 2000
-        },
-        {
-            "JellyNumber": 11,
-            "JellyName": "핵쓰기",
-            "amount": 0,
-            "jellyPerSecond": 100,
-            "price": 5000
         }
     ]
 }
