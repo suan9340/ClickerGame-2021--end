@@ -1,19 +1,19 @@
 ﻿{
     "userName": "우수안",
-    "jellyPiece": 209,
+    "jellyPiece": 43,
     "jellyPerClick": 1,
-    "jellyPerAuto": 6,
+    "jellyPerAuto": 1,
     "jellyList": [
         {
             "JellyNumber": 0,
             "JellyName": "흑화한 제트",
-            "amount": 6,
+            "amount": 1,
             "jellyPerSecond": 1,
-            "price": 33
+            "price": 12
         },
         {
             "JellyNumber": 1,
-            "JellyName": "미소녀가 된 아스트라",
+            "JellyName": "일진 아스트라",
             "amount": 0,
             "jellyPerSecond": 2,
             "price": 20
@@ -24,6 +24,22 @@
             "amount": 0,
             "jellyPerSecond": 3,
             "price": 50
+        }
+    ],
+    "itemList": [
+        {
+            "itemNumber": 0,
+            "itemName": "소이탄",
+            "itemSulMang": "초당 클릭시 얻는 돈이 10프로 증가",
+            "amount": 0,
+            "price": 500
+        },
+        {
+            "itemNumber": 1,
+            "itemName": "킬조이 포탑",
+            "itemSulMang": "자동클릭",
+            "amount": 0,
+            "price": 1000
         }
     ]
 }

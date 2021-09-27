@@ -8,13 +8,14 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private Text jellyText = null;
     //[SerializeField] private Text jellyPerSecond = null;
-    [SerializeField] private Text jellyClickPer = null;
     [SerializeField] private GameObject upgradePannelTemplate = null;
+    [SerializeField] private GameObject upgradeItemPannelTemplate = null;
     [SerializeField] private Transform pool = null;
     [SerializeField] private JellyText jellyTextTemplate = null;
 
     [SerializeField] private Sprite[] ClickImage; 
     private List<UpgradePannel> upgradePannel = new List<UpgradePannel>();
+    private List<UpgradeItem> upgradeItemPannel = new List<UpgradeItem>();
     private void Start()
     {
         UpdateJellyPanel();
@@ -34,7 +35,21 @@ public class UIManager : MonoBehaviour
             newPannel.SetActive(true);
             upgradePannel.Add(newPannelComponent);
         }
+    }
 
+    private void CreateItem()
+    {
+        GameObject newPannel = null;
+        UpgradeItem newPannelComponent = null;
+
+        foreach (Item item in GameManager.Instance.CurrentUser.itemList)
+        {
+            newPannel = Instantiate(upgradeItemPannelTemplate, upgradeItemPannelTemplate.transform.parent);
+            newPannelComponent = newPannel.GetComponent<UpgradeItem>();
+            newPannelComponent.SetValue(item);
+            newPannel.SetActive(true);
+            upgradeItemPannel.Add(newPannelComponent);
+        }
     }
     public void OnClickJelly()
     {
