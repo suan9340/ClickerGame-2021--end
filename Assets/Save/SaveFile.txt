@@ -1,6 +1,6 @@
 ﻿{
     "userName": "우수안",
-    "jellyPiece": 10182,
+    "jellyPiece": 12319,
     "jellyPerClick": 1,
     "jellyPerAuto": 38,
     "jellyList": [
