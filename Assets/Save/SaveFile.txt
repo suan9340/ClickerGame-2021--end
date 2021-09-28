@@ -1,45 +1,75 @@
 ﻿{
     "userName": "우수안",
-    "jellyPiece": 12319,
+    "jellyPiece": 7,
     "jellyPerClick": 1,
-    "jellyPerAuto": 38,
+    "jellyPerAuto": 0,
     "jellyList": [
         {
             "JellyNumber": 0,
             "JellyName": "제트",
-            "amount": 13,
+            "amount": 0,
             "jellyPerSecond": 1,
-            "price": 151
+            "price": 10
         },
         {
             "JellyNumber": 1,
             "JellyName": "아스트라",
-            "amount": 8,
+            "amount": 0,
             "jellyPerSecond": 2,
-            "price": 112
+            "price": 20
         },
         {
             "JellyNumber": 2,
             "JellyName": "스카이",
-            "amount": 3,
+            "amount": 0,
             "jellyPerSecond": 3,
-            "price": 96
+            "price": 50
         }
     ],
     "itemList": [
         {
             "itemNumber": 0,
             "itemName": "소이탄",
-            "itemSulMang": "초당 클릭시 얻는 돈이 10프로 증가",
-            "amount": 16,
-            "price": 293
+            "amount": 4,
+            "price": 22
         },
         {
             "itemNumber": 1,
             "itemName": "킬조이 포탑",
-            "itemSulMang": "자동클릭",
-            "amount": 8,
-            "price": 112
+            "amount": 0,
+            "price": 20
+        }
+    ],
+    "challengeList": [
+        {
+            "ChallengeNumber": 0,
+            "ChallengeName": "50회 클릭",
+            "Challengecompensation": 60
+        },
+        {
+            "ChallengeNumber": 1,
+            "ChallengeName": "150회 클릭",
+            "Challengecompensation": 200
+        },
+        {
+            "ChallengeNumber": 2,
+            "ChallengeName": "300회 클릭",
+            "Challengecompensation": 500
+        },
+        {
+            "ChallengeNumber": 3,
+            "ChallengeName": "상점 아이템 하나 이상 활성화",
+            "Challengecompensation": 20
+        },
+        {
+            "ChallengeNumber": 4,
+            "ChallengeName": "상점 아이템 10렙 이상 활성화",
+            "Challengecompensation": 400
+        },
+        {
+            "ChallengeNumber": 5,
+            "ChallengeName": "상점 아이템 20렙 이상 활성화",
+            "Challengecompensation": 1000
         }
     ]
 }

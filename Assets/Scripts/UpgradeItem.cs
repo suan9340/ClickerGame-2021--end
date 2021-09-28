@@ -10,7 +10,9 @@ public class UpgradeItem : MonoBehaviour
     [SerializeField] private Text itemAmountText = null;
     [SerializeField] private Button purChaseButton = null;
     [SerializeField] private Image itemImage = null;
-    [SerializeField] private Sprite[] jellySprite;
+    [SerializeField] private Sprite[] tearSprite;
+
+    private int index = 0;
     private long curnet;
 
     private Image image = null;
@@ -21,6 +23,7 @@ public class UpgradeItem : MonoBehaviour
     private void Start()
     {
         image = GetComponent<Image>();
+        CheackTear(index);
     }
 
     private void Update()
@@ -30,7 +33,7 @@ public class UpgradeItem : MonoBehaviour
 
     public void SetValue(Item _item)
     {
-        this.item = _item;
+        item = _item;
         UpdateUI();
     }
 
@@ -38,30 +41,24 @@ public class UpgradeItem : MonoBehaviour
     {
         itemNameText.text = item.itemName;
         itemPriceText.text = $"{item.price}개";
-        itemAmountText.text = $"{item.amount}";
-        itemImage.sprite = jellySprite[item.itemNumber];
+        itemAmountText.text = $"{item.amount}Lv";
+        itemImage.sprite = tearSprite[0];
     }
     public void OnClickPurChase()
     {
+
         if (GameManager.Instance.CurrentUser.jellyPiece < item.price)
         {
             return;
         }
-        if(item.itemNumber==0)
-        {
-            Debug.Log("브림 구매");
-        }
-        else if(item.itemNumber==1)
-        {
-            Debug.Log("킬조이 구매");
-        }
+        CheakCanBuy();
+        index++;
         GameManager.Instance.CurrentUser.jellyPiece -= item.price;
         //GameManager.Instance.CurrentUser.jellyPerAuto += item.jellyPerSecond;
         item.price = (long)(item.price * 1.25f);
         item.amount++;
         UpdateUI();
         GameManager.Instance.UI.UpdateJellyPanel();
-        CheakCanBuy();
     }
 
     private void CheakCanBuy()
@@ -78,6 +75,28 @@ public class UpgradeItem : MonoBehaviour
             purChaseButton.interactable = false;
             purChaseButton.image.color = new Color(1f, 0f, 0f, 1f);
             image.color = new Color(1f, 0f, 0f, 1f);
+        }
+    }
+
+    private void CheackTear(int num)
+    {
+        switch(num)
+        {
+            case 0:
+                itemImage.sprite = tearSprite[0];
+                Debug.Log("아이언");
+                break;
+            case 1:
+                itemImage.sprite = tearSprite[1];
+
+                Debug.Log("아이언2");
+                break;
+            case 3:
+                itemImage.sprite = tearSprite[2];
+
+                Debug.Log("아이언3");
+                break;
+
         }
     }
 }

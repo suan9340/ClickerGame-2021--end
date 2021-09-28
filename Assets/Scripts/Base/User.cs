@@ -9,4 +9,5 @@ public class User
     public long jellyPerAuto;
     public List<Jelly> jellyList=new List<Jelly>();
     public List<Item> itemList = new List<Item>();
+    public List<Challenge> challengeList = new List<Challenge>();
 }

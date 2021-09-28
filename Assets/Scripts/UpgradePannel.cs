@@ -34,7 +34,7 @@ public class UpgradePannel : MonoBehaviour
     }
     public void SetValue(Jelly _jelly)
     {
-        this.jelly = _jelly;
+        jelly = _jelly;
         UpdateUI();
     }
 
@@ -68,7 +68,7 @@ public class UpgradePannel : MonoBehaviour
     {
         jellyNameText.text = jelly.JellyName;
         jellyPriceText.text = $"{jelly.price}°³";
-        jellyAmountText.text = $"{jelly.amount}";
+        jellyAmountText.text = $"{jelly.amount}Lv";
         jellyImage.sprite = jellySprite[jelly.JellyNumber];
     }
 
