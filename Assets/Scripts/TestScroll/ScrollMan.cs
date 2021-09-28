@@ -65,13 +65,13 @@ public class ScrollMan : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             }
         }
 
-        for(int i=0;i<SIZE;i++)
-        {
-            if(contenTr.GetChild(i).GetComponent<ScrollScript>()&&curPos!=pos[i]&&targetPos==pos[i])
-            {
-                contenTr.GetChild(i).GetChild(1).GetComponent<Scrollbar>().value = 1;
-            }
-        }
+        //for(int i=0;i<SIZE;i++)
+        //{
+        //    if(contenTr.GetChild(i).GetComponent<ScrollScript>()&&curPos!=pos[i]&&targetPos==pos[i])
+        //    {
+        //        contenTr.GetChild(i).GetChild(1).GetComponent<Scrollbar>().value = 1;
+        //    }
+        //}
     }
 
     private void Update()

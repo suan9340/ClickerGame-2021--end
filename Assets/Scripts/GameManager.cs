@@ -34,6 +34,10 @@ public class GameManager : MonoSingleTon<GameManager>
         {
             user.jellyPiece += jelly.jellyPerSecond * jelly.amount;
         }
+        foreach(Item item in user.itemList)
+        {
+           
+        }
         UI.UpdateJellyPanel();
     }
     private void LoadFromJson()

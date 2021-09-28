@@ -20,8 +20,11 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] private Sprite[] settingImage;
 
     //----------- 나가기 눌렀을 때 변수 -----------//
+    [Header("나가기 눌렀을 때")]
     [SerializeField] private GameObject outGame;
     private bool isOutGame;
+
+    [SerializeField] private GameObject setHide;
 
     #region 상점
 
@@ -72,10 +75,12 @@ public class ButtonManager : MonoBehaviour
         isOutGame = !isOutGame;
         if(isOutGame)
         {
+            setHide.SetActive(true);
             outGame.SetActive(true);
         }
         else
         {
+            setHide.SetActive(false);
             outGame.SetActive(false);  
         }
     }
@@ -83,6 +88,7 @@ public class ButtonManager : MonoBehaviour
     public void ClickXChang()
     {
         isOutGame = !isOutGame;
+        setHide.SetActive(false);
         outGame.SetActive(false);
     }
 

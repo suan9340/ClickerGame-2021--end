@@ -13,13 +13,16 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Transform pool = null;
     [SerializeField] private JellyText jellyTextTemplate = null;
 
-    [SerializeField] private Sprite[] ClickImage; 
+    [SerializeField] private Sprite[] ClickImage;
+    [SerializeField] private Animator storeAnimator;
+    [SerializeField] private Animator playerAnimator;
     private List<UpgradePannel> upgradePannel = new List<UpgradePannel>();
     private List<UpgradeItem> upgradeItemPannel = new List<UpgradeItem>();
     private void Start()
     {
         UpdateJellyPanel();
         CreatePannels();
+        CreateItem();
     }
 
     private void CreatePannels()
@@ -53,6 +56,9 @@ public class UIManager : MonoBehaviour
     }
     public void OnClickJelly()
     {
+        storeAnimator.Play("Clickshake");
+        playerAnimator.Play("ClickBig");
+        
         GameManager.Instance.CurrentUser.jellyPiece += GameManager.Instance.CurrentUser.jellyPerClick;
         UpdateJellyPanel();
 
@@ -67,14 +73,12 @@ public class UIManager : MonoBehaviour
         }
 
         newText.Show(Input.mousePosition);
-        //Debug.Log("클릭함");
     }
 
     public void UpdateJellyPanel()
     {
         jellyText.text = $" {GameManager.Instance.CurrentUser.jellyPiece}개 \n";
         //jellyPerSecond.text = $"{GameManager.Instance.CurrentUser.jellyPerAuto}개 자동 생성\n";
-        //jellyClickPer.text = $"{GameManager.Instance.CurrentUser.jellyPerClick} 클릭\n";
     }
 
 
