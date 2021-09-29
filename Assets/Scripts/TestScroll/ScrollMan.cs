@@ -25,6 +25,13 @@ public class ScrollMan : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
     }
 
+    public void TabClick(int n)
+    {
+        targetIndex = n;
+        targetPos = pos[n];
+        SoundManager.Instance.ButtonClickSound();
+    }
+
     private float SetPos()
     {
         for (int i = 0; i < SIZE; i++)
@@ -64,14 +71,6 @@ public class ScrollMan : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                 targetPos = curPos + distance;
             }
         }
-
-        //for(int i=0;i<SIZE;i++)
-        //{
-        //    if(contenTr.GetChild(i).GetComponent<ScrollScript>()&&curPos!=pos[i]&&targetPos==pos[i])
-        //    {
-        //        contenTr.GetChild(i).GetChild(1).GetComponent<Scrollbar>().value = 1;
-        //    }
-        //}
     }
 
     private void Update()
@@ -84,9 +83,5 @@ public class ScrollMan : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
     }
 
-    public void TabClick(int n)
-    {
-        targetIndex = n;
-        targetPos = pos[n];
-    }
+    
 }

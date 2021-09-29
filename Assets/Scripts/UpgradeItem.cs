@@ -58,6 +58,8 @@ public class UpgradeItem : MonoBehaviour
         UpdateUI();
         PurChase();
         GameManager.Instance.UI.UpdateJellyPanel();
+        SoundManager.Instance.PurChaseSound();
+
     }
 
     private void CheakCanBuy()

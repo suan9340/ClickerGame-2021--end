@@ -1,7 +1,7 @@
 ﻿{
     "userName": "우수안",
-    "jellyPiece": 99999850371,
-    "jellyPerClick": 56,
+    "jellyPiece": 0,
+    "jellyPerClick": 1,
     "jellyPerAuto": 0,
     "jellyList": [
         {
@@ -30,9 +30,9 @@
         {
             "itemNumber": 0,
             "itemName": "승급",
-            "amount": 11,
+            "amount": 0,
             "perClick": 5,
-            "price": 284293
+            "price": 100
         }
     ],
     "challengeList": [

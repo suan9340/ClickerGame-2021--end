@@ -91,6 +91,7 @@ public class UpgradePannel : MonoBehaviour
         GameManager.Instance.UI.UpdateJellyPanel();
         //Debug.Log("아이템 구매 성공");
         CheakCanBuy();
+        SoundManager.Instance.PurChaseSound();
 
         if (jelly.JellyNumber == 0)
         {

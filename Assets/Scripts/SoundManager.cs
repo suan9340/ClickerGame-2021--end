@@ -2,15 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundManager : MonoBehaviour
+public class SoundManager : MonoSingleTon<SoundManager>
 {
-    [SerializeField] private AudioSource mainBGM;
+    [SerializeField] private AudioClip buttonClip;
+    [SerializeField] private AudioClip purchaseClip;
+    [SerializeField] private Transform purchasePool;
+    [SerializeField] private Transform buttonPool;
 
-
-    private void Start()
+    public void ButtonClickSound()
     {
-
+        PlayEffectSound("buttonSound", buttonClip);
     }
 
+    public void PurChaseSound()
+    {
+        PlayEffectSound("puerchase", purchaseClip);
+        
+    }
+    public void PlayEffectSound(string name, AudioClip clip)
+    {
+        GameObject go = new GameObject(name + "Sound");
+        AudioSource audioSource = go.AddComponent<AudioSource>();
+        audioSource.clip = clip;
+        audioSource.Play();
+
+        Destroy(go, clip.length);
+    }
 
 }
