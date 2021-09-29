@@ -8,6 +8,7 @@ public class UpgradePannel : MonoBehaviour
     [SerializeField] private Text jellyNameText = null;
     [SerializeField] private Text jellyPriceText = null;
     [SerializeField] private Text jellyAmountText = null;
+    [SerializeField] private Text amountAutoText = null;
     [SerializeField] private Button purChaseButton = null;
     [SerializeField] private Image jellyImage = null;
     [SerializeField] private Sprite[] jellySprite;
@@ -69,6 +70,7 @@ public class UpgradePannel : MonoBehaviour
         jellyNameText.text = jelly.JellyName;
         jellyPriceText.text = $"{jelly.price}°³";
         jellyAmountText.text = $"{jelly.amount}Lv";
+        amountAutoText.text = $"(+{jelly.jellyPerSecond})/Auto";
         jellyImage.sprite = jellySprite[jelly.JellyNumber];
     }
 

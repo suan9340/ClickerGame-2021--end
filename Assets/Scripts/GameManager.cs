@@ -7,6 +7,7 @@ public class GameManager : MonoSingleTon<GameManager>
 {
     private string SAVE_PATH = "";
     private string SAVE_FILENAME = "/SaveFile.txt";
+    public bool isAdVan = false;
 
     [SerializeField] private User user = null;
     public User CurrentUser { get { return user; } }
@@ -57,6 +58,10 @@ public class GameManager : MonoSingleTon<GameManager>
         File.WriteAllText(SAVE_PATH + SAVE_FILENAME, json, System.Text.Encoding.UTF8);
     }
 
+    public void ResetEvery()
+    {
+        //리셋 원하는거 다 0 넣기
+    }
     private void OnApplicationQuit()
     {
         SaveToJson();

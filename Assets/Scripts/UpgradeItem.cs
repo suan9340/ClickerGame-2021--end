@@ -8,22 +8,21 @@ public class UpgradeItem : MonoBehaviour
     [SerializeField] private Text itemNameText = null;
     [SerializeField] private Text itemPriceText = null;
     [SerializeField] private Text itemAmountText = null;
+    [SerializeField] private Text itemPerClick = null;
     [SerializeField] private Button purChaseButton = null;
     [SerializeField] private Image itemImage = null;
     [SerializeField] private Sprite[] tearSprite;
 
     private int index = 0;
-    private long curnet;
 
     private Image image = null;
-
 
     private Item item = null;
 
     private void Start()
     {
         image = GetComponent<Image>();
-        CheackTear(index);
+        Check();
     }
 
     private void Update()
@@ -42,7 +41,7 @@ public class UpgradeItem : MonoBehaviour
         itemNameText.text = item.itemName;
         itemPriceText.text = $"{item.price}개";
         itemAmountText.text = $"{item.amount}Lv";
-        itemImage.sprite = tearSprite[0];
+        itemPerClick.text = $"(+{item.perClick})/Click";
     }
     public void OnClickPurChase()
     {
@@ -52,12 +51,12 @@ public class UpgradeItem : MonoBehaviour
             return;
         }
         CheakCanBuy();
-        index++;
         GameManager.Instance.CurrentUser.jellyPiece -= item.price;
-        //GameManager.Instance.CurrentUser.jellyPerAuto += item.jellyPerSecond;
-        item.price = (long)(item.price * 1.25f);
+        GameManager.Instance.CurrentUser.jellyPerClick += item.perClick;
+        item.price = (long)(item.price * 1.9f);
         item.amount++;
         UpdateUI();
+        PurChase();
         GameManager.Instance.UI.UpdateJellyPanel();
     }
 
@@ -68,7 +67,6 @@ public class UpgradeItem : MonoBehaviour
             purChaseButton.interactable = true;
             purChaseButton.image.color = new Color(1f, 0f, 0.3568628f, 1f);
             image.color = new Color(1f, 0f, 0.3568628f, 1f);
-
         }
         else
         {
@@ -77,26 +75,34 @@ public class UpgradeItem : MonoBehaviour
             image.color = new Color(1f, 0f, 0f, 1f);
         }
     }
-
-    private void CheackTear(int num)
+    public void PurChase()
     {
-        switch(num)
+        if (item.amount > 19) return;
+        index++;
+        //Debug.Log(index); // 1부터 아이언 2
+        itemImage.sprite=tearSprite[index];
+       
+    }
+
+    public void AdVan()
+    {
+        if (index == 3 || index == 6 || index == 9 || index == 12 || index == 15 || index == 18 || index == 19)
         {
-            case 0:
-                itemImage.sprite = tearSprite[0];
-                Debug.Log("아이언");
-                break;
-            case 1:
-                itemImage.sprite = tearSprite[1];
-
-                Debug.Log("아이언2");
-                break;
-            case 3:
-                itemImage.sprite = tearSprite[2];
-
-                Debug.Log("아이언3");
-                break;
-
+            GameManager.Instance.isAdVan = true;
         }
     }
+
+    private void Check()
+    {
+        index = item.amount;
+        if(index>19)
+        {
+            itemImage.sprite = tearSprite[19];
+        }
+        else
+        {
+            itemImage.sprite = tearSprite[index];
+        }
+    }
+   
 }

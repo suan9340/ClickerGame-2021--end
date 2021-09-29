@@ -9,8 +9,17 @@ public class UpdateChallenge : MonoBehaviour
     [SerializeField] private Button CompleteBtn;
     [SerializeField] private Text challengeCompensation;
 
+    private bool isadVan = true;
+
     private Challenge challenge;
 
+    private void Update()
+    {
+        if(GameManager.Instance.isAdVan)
+        {
+
+        }
+    }
     public void SetValues(Challenge _challenge)
     {
         challenge = _challenge;
@@ -21,5 +30,10 @@ public class UpdateChallenge : MonoBehaviour
     {
         challengeInfo.text= $"{challenge.ChallengeName}";
         challengeCompensation.text=$"{challenge.Challengecompensation}°³";
+    }
+
+    public void OnClickPurChase()
+    {
+        GameManager.Instance.CurrentUser.jellyPiece += challenge.Challengecompensation;
     }
 }

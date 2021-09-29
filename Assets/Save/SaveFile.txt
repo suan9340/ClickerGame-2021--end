@@ -1,7 +1,7 @@
 ﻿{
     "userName": "우수안",
-    "jellyPiece": 7,
-    "jellyPerClick": 1,
+    "jellyPiece": 99999850371,
+    "jellyPerClick": 56,
     "jellyPerAuto": 0,
     "jellyList": [
         {
@@ -15,61 +15,61 @@
             "JellyNumber": 1,
             "JellyName": "아스트라",
             "amount": 0,
-            "jellyPerSecond": 2,
-            "price": 20
+            "jellyPerSecond": 3,
+            "price": 50
         },
         {
             "JellyNumber": 2,
             "JellyName": "스카이",
             "amount": 0,
-            "jellyPerSecond": 3,
-            "price": 50
+            "jellyPerSecond": 10,
+            "price": 110
         }
     ],
     "itemList": [
         {
             "itemNumber": 0,
-            "itemName": "소이탄",
-            "amount": 4,
-            "price": 22
-        },
-        {
-            "itemNumber": 1,
-            "itemName": "킬조이 포탑",
-            "amount": 0,
-            "price": 20
+            "itemName": "승급",
+            "amount": 11,
+            "perClick": 5,
+            "price": 284293
         }
     ],
     "challengeList": [
         {
             "ChallengeNumber": 0,
-            "ChallengeName": "50회 클릭",
-            "Challengecompensation": 60
-        },
-        {
-            "ChallengeNumber": 1,
-            "ChallengeName": "150회 클릭",
+            "ChallengeName": "브론즈 달성",
             "Challengecompensation": 200
         },
         {
-            "ChallengeNumber": 2,
-            "ChallengeName": "300회 클릭",
+            "ChallengeNumber": 1,
+            "ChallengeName": "실버 달성",
             "Challengecompensation": 500
         },
         {
-            "ChallengeNumber": 3,
-            "ChallengeName": "상점 아이템 하나 이상 활성화",
-            "Challengecompensation": 20
+            "ChallengeNumber": 1,
+            "ChallengeName": "골드 달성",
+            "Challengecompensation": 500
         },
         {
-            "ChallengeNumber": 4,
-            "ChallengeName": "상점 아이템 10렙 이상 활성화",
-            "Challengecompensation": 400
+            "ChallengeNumber": 1,
+            "ChallengeName": "플레티넘 달성",
+            "Challengecompensation": 500
         },
         {
-            "ChallengeNumber": 5,
-            "ChallengeName": "상점 아이템 20렙 이상 활성화",
-            "Challengecompensation": 1000
+            "ChallengeNumber": 1,
+            "ChallengeName": "다이아 달성",
+            "Challengecompensation": 500
+        },
+        {
+            "ChallengeNumber": 1,
+            "ChallengeName": "불멸 달성",
+            "Challengecompensation": 500
+        },
+        {
+            "ChallengeNumber": 1,
+            "ChallengeName": "레디언트 달성",
+            "Challengecompensation": 500
         }
     ]
 }
