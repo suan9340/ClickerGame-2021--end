@@ -11,7 +11,7 @@ public class ScrollMan : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public Slider tabSlider;
     public RectTransform[] BtnRect;
-    const int SIZE = 3;
+    const int SIZE = 2;
     float[] pos = new float[SIZE];// 0, 0.496,0.999
     float distance,targetPos,curPos;
     bool isDrag;

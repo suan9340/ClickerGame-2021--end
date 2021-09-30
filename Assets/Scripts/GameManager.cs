@@ -17,8 +17,8 @@ public class GameManager : MonoSingleTon<GameManager>
     private void Awake()
     {
         // 안드로이드 빌드시 Application.persistentDataPath로 수정해야 빌드됨
-        //SAVE_PATH = Application.dataPath + "/Save";
-        SAVE_PATH = Application.persistentDataPath + "/Save";
+        SAVE_PATH = Application.dataPath + "/Save";
+        //SAVE_PATH = Application.persistentDataPath + "/Save";
         if (Directory.Exists(SAVE_PATH) == false)
         {
             Directory.CreateDirectory(SAVE_PATH);
