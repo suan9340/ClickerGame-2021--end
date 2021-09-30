@@ -24,6 +24,10 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] private GameObject outGame;
     private bool isOutGame;
 
+    [Header("초기화 눌렀을 떄")]
+    [SerializeField] private GameObject ReturnGame;
+    private bool isReturnGame;
+
     [SerializeField] private GameObject setHide;
 
     #region 상점
@@ -70,6 +74,18 @@ public class ButtonManager : MonoBehaviour
     }
     #endregion
 
+    private void Update()
+    {
+        KeyInput();
+    }
+
+    private void KeyInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ClickOutGame();
+        }
+    }
     public void ClickOutGame()
     {
         isOutGame = !isOutGame;
@@ -97,4 +113,33 @@ public class ButtonManager : MonoBehaviour
         Debug.Log("게임종료성공");
         Application.Quit();
     }
+
+    public void OnClickReTryGame()
+    {
+        isReturnGame = !isReturnGame;
+        if(isReturnGame)
+        {
+            ReturnGame.SetActive(true);
+            outGame.SetActive(true);
+        }
+        else
+        {
+            ReturnGame.SetActive(false);
+            outGame.SetActive(false);
+        }
+    }
+
+    public void ClickYesReTry()
+    {
+        Debug.Log("리셋함수여따넣어야함");
+        //GameManager.Instance.ResetEvery();
+    }
+
+    public void ClickNoReTry()
+    {
+        isReturnGame = !isReturnGame;
+        ReturnGame.SetActive(false);
+        outGame.SetActive(false);
+    }
+
 }

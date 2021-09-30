@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject upgradeItemPannelTemplate = null;
     [SerializeField] private GameObject upgradeChallengePannelTemplate = null;
 
+    [SerializeField] private AudioClip clickAudio;
     [SerializeField] private Transform pool = null;
     [SerializeField] private JellyText jellyTextTemplate = null;
 
@@ -26,6 +27,18 @@ public class UIManager : MonoBehaviour
         PannelsUpdate();
     }
 
+    private void Update()
+    {
+        KeyInPut();
+    }
+
+    private void KeyInPut()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            OnClickJelly();
+        }
+    }
     private void PannelsUpdate()
     {
         UpdateJellyPanel();
@@ -81,7 +94,7 @@ public class UIManager : MonoBehaviour
     {
         storeAnimator.Play("Clickshake");
         playerAnimator.Play("ClickBig");
-        
+        SoundManager.Instance.ClickCLick();
         GameManager.Instance.CurrentUser.jellyPiece += GameManager.Instance.CurrentUser.jellyPerClick;
         UpdateJellyPanel();
 
@@ -100,7 +113,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateJellyPanel()
     {
-        jellyText.text = $" {GameManager.Instance.CurrentUser.jellyPiece}개 \n";
+        jellyText.text = $"{GameManager.Instance.CurrentUser.jellyPiece}개";
         //jellyPerSecond.text = $"{GameManager.Instance.CurrentUser.jellyPerAuto}개 자동 생성\n";
     }
 

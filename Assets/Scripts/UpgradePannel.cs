@@ -25,7 +25,6 @@ public class UpgradePannel : MonoBehaviour
 
     private void Start()
     {
-        Check();
         image = GetComponent<Image>();
     }
 
@@ -39,32 +38,6 @@ public class UpgradePannel : MonoBehaviour
         UpdateUI();
     }
 
-    private void Check()
-    {
-        if(jelly.JellyNumber==0)
-        {
-            if(jelly.amount >= 1)
-            {
-                jett.SetActive(true);
-            }
-        }
-
-        else if (jelly.JellyNumber==1)
-        {
-            if (jelly.amount >= 1)
-            {
-                astra.SetActive(true);
-            }
-        }
-
-        else if(jelly.JellyNumber==2)
-        {
-            if (jelly.amount >= 1)
-            {
-                sky.SetActive(true);
-            }
-        }
-    }
     public void UpdateUI()
     {
         jellyNameText.text = jelly.JellyName;
@@ -92,30 +65,6 @@ public class UpgradePannel : MonoBehaviour
         //Debug.Log("아이템 구매 성공");
         CheakCanBuy();
         SoundManager.Instance.PurChaseSound();
-
-        if (jelly.JellyNumber == 0)
-        {
-            if(jelly.amount==1)
-            {
-                jett.SetActive(true);
-            }
-        }
-        else if (jelly.JellyNumber == 1)
-        {
-            if(jelly.amount==1)
-            {
-                astra.SetActive(true);
-            }
-
-        }
-        else if (jelly.JellyNumber == 2)
-        {
-            if(jelly.amount==1)
-            {
-                sky.SetActive(true);
-            }
-
-        }
     }
     private void CheakCanBuy()
     {

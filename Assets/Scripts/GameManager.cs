@@ -7,7 +7,6 @@ public class GameManager : MonoSingleTon<GameManager>
 {
     private string SAVE_PATH = "";
     private string SAVE_FILENAME = "/SaveFile.txt";
-    public bool isAdVan = false;
 
     [SerializeField] private User user = null;
     public User CurrentUser { get { return user; } }
@@ -36,10 +35,6 @@ public class GameManager : MonoSingleTon<GameManager>
         {
             user.jellyPiece += jelly.jellyPerSecond * jelly.amount;
         }
-        foreach(Item item in user.itemList)
-        {
-           
-        }
         UI.UpdateJellyPanel();
     }
     private void LoadFromJson()
@@ -55,14 +50,18 @@ public class GameManager : MonoSingleTon<GameManager>
     public void SaveToJson()
     {
         SAVE_PATH = Application.dataPath + "/Save";
+        //SAVE_PATH = Application.persistentDataPath + "/Save";
         string json = JsonUtility.ToJson(user, true);
         File.WriteAllText(SAVE_PATH + SAVE_FILENAME, json, System.Text.Encoding.UTF8);
     }
-
+                                                  
     public void ResetEvery()
     {
-        //리셋 원하는거 다 0 넣기
+        CurrentUser.jellyPerAuto = 0;
+        CurrentUser.jellyPerClick = 0;
+        CurrentUser.jellyPiece = 0;
     }
+
     private void OnApplicationQuit()
     {
         SaveToJson();

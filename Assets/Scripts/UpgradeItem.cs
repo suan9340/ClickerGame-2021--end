@@ -53,7 +53,7 @@ public class UpgradeItem : MonoBehaviour
         CheakCanBuy();
         GameManager.Instance.CurrentUser.jellyPiece -= item.price;
         GameManager.Instance.CurrentUser.jellyPerClick += item.perClick;
-        item.price = (long)(item.price * 1.9f);
+        item.price = (long)(item.price * 1.8f);
         item.amount++;
         UpdateUI();
         PurChase();
@@ -86,15 +86,7 @@ public class UpgradeItem : MonoBehaviour
        
     }
 
-    public void AdVan()
-    {
-        if (index == 3 || index == 6 || index == 9 || index == 12 || index == 15 || index == 18 || index == 19)
-        {
-            GameManager.Instance.isAdVan = true;
-        }
-    }
-
-    private void Check()
+        private void Check()
     {
         index = item.amount;
         if(index>19)

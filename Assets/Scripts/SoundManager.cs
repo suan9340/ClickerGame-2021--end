@@ -6,14 +6,15 @@ public class SoundManager : MonoSingleTon<SoundManager>
 {
     [SerializeField] private AudioClip buttonClip;
     [SerializeField] private AudioClip purchaseClip;
-    [SerializeField] private Transform purchasePool;
-    [SerializeField] private Transform buttonPool;
-
+    [SerializeField] private AudioClip clickClip;
     public void ButtonClickSound()
     {
         PlayEffectSound("buttonSound", buttonClip);
     }
-
+    public void ClickCLick()
+    {
+        PlayEffectSound("click", clickClip);
+    }
     public void PurChaseSound()
     {
         PlayEffectSound("puerchase", purchaseClip);

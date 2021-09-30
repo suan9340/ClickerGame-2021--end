@@ -13,13 +13,6 @@ public class UpdateChallenge : MonoBehaviour
 
     private Challenge challenge;
 
-    private void Update()
-    {
-        if(GameManager.Instance.isAdVan)
-        {
-
-        }
-    }
     public void SetValues(Challenge _challenge)
     {
         challenge = _challenge;

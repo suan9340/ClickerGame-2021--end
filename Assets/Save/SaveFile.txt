@@ -1,38 +1,66 @@
 ﻿{
     "userName": "우수안",
-    "jellyPiece": 0,
-    "jellyPerClick": 1,
-    "jellyPerAuto": 0,
+    "jellyPiece": 519001,
+    "jellyPerClick": 66,
+    "jellyPerAuto": 2605,
     "jellyList": [
         {
             "JellyNumber": 0,
-            "JellyName": "제트",
-            "amount": 0,
+            "JellyName": "소바",
+            "amount": 8,
             "jellyPerSecond": 1,
-            "price": 10
+            "price": 51
         },
         {
             "JellyNumber": 1,
-            "JellyName": "아스트라",
-            "amount": 0,
+            "JellyName": "사이퍼",
+            "amount": 14,
             "jellyPerSecond": 3,
-            "price": 50
+            "price": 1103
         },
         {
             "JellyNumber": 2,
-            "JellyName": "스카이",
-            "amount": 0,
+            "JellyName": "브림스톤",
+            "amount": 3,
             "jellyPerSecond": 10,
-            "price": 110
+            "price": 195
+        },
+        {
+            "JellyNumber": 3,
+            "JellyName": "레이나",
+            "amount": 2,
+            "jellyPerSecond": 20,
+            "price": 312
+        },
+        {
+            "JellyNumber": 4,
+            "JellyName": "스카이",
+            "amount": 5,
+            "jellyPerSecond": 50,
+            "price": 1220
+        },
+        {
+            "JellyNumber": 5,
+            "JellyName": "아스트라",
+            "amount": 11,
+            "jellyPerSecond": 85,
+            "price": 8133
+        },
+        {
+            "JellyNumber": 6,
+            "JellyName": "제트",
+            "amount": 13,
+            "jellyPerSecond": 100,
+            "price": 16356
         }
     ],
     "itemList": [
         {
             "itemNumber": 0,
             "itemName": "승급",
-            "amount": 0,
+            "amount": 13,
             "perClick": 5,
-            "price": 100
+            "price": 206531
         }
     ],
     "challengeList": [
