@@ -13,6 +13,13 @@ public class GameManager : MonoSingleTon<GameManager>
     private UIManager uiManager = null;
     public UIManager UI { get { return uiManager; } }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.T))
+        {
+            ResetEvery();
+        }
+    }
     private void Awake()
     {
         // 안드로이드 빌드시 Application.persistentDataPath로 수정해야 빌드됨
@@ -58,8 +65,13 @@ public class GameManager : MonoSingleTon<GameManager>
     public void ResetEvery()
     {
         CurrentUser.jellyPerAuto = 0;
-        CurrentUser.jellyPerClick = 0;
+        CurrentUser.jellyPerClick = 1;
         CurrentUser.jellyPiece = 0;
+
+        UI.UpdateJellyPanel();
+        SaveToJson();
+        UI.UpdateJellyPanel();
+
     }
 
     private void OnApplicationQuit()

@@ -10,4 +10,5 @@ public class User
     public List<Jelly> jellyList=new List<Jelly>();
     public List<Item> itemList = new List<Item>();
     public List<Challenge> challengeList = new List<Challenge>();
+    public List<Items> itemsList = new List<Items>();
 }

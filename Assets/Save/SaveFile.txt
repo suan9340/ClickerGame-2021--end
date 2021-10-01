@@ -1,8 +1,8 @@
 ﻿{
     "userName": "우수안",
-    "jellyPiece": 519001,
-    "jellyPerClick": 66,
-    "jellyPerAuto": 2605,
+    "jellyPiece": 80758,
+    "jellyPerClick": 1,
+    "jellyPerAuto": 0,
     "jellyList": [
         {
             "JellyNumber": 0,
@@ -99,5 +99,6 @@
             "ChallengeName": "레디언트 달성",
             "Challengecompensation": 500
         }
-    ]
+    ],
+    "itemsList": []
 }

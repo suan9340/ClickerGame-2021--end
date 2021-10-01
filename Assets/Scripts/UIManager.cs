@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject upgradePannelTemplate = null;
     [SerializeField] private GameObject upgradeItemPannelTemplate = null;
     [SerializeField] private GameObject upgradeChallengePannelTemplate = null;
+    [SerializeField] private GameObject upgradeItemsPannelTemplate = null;
 
     [SerializeField] private AudioClip clickAudio;
     [SerializeField] private Transform pool = null;
@@ -22,6 +23,8 @@ public class UIManager : MonoBehaviour
     private List<UpgradePannel> upgradePannel = new List<UpgradePannel>();
     private List<UpgradeItem> upgradeItemPannel = new List<UpgradeItem>();
     private List<UpdateChallenge> upgradeChallengePannel = new List<UpdateChallenge>();
+    private List<UpgradeItemsPannel> upgradeItemsPannels = new List<UpgradeItemsPannel>();
+
     private void Start()
     {
         PannelsUpdate();
@@ -44,7 +47,7 @@ public class UIManager : MonoBehaviour
         UpdateJellyPanel();
         CreatePannels();
         CreateItem();
-        CreateChallenge();
+        //CreateChallenge();
     }
 
     private void CreatePannels()
@@ -77,17 +80,30 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private void CreateChallenge()
+    //private void CreateChallenge()
+    //{
+    //    GameObject newPannel = null;
+    //    UpdateChallenge newPannelComponent = null;
+    //    foreach(Challenge challenge in GameManager.Instance.CurrentUser.challengeList)
+    //    {
+    //        newPannel = Instantiate(upgradeChallengePannelTemplate, upgradeChallengePannelTemplate.transform.parent);
+    //        newPannelComponent = newPannel.GetComponent<UpdateChallenge>();
+    //        newPannelComponent.SetValues(challenge);
+    //        newPannel.SetActive(true);
+    //        upgradeChallengePannel.Add(newPannelComponent);
+    //    }
+    //}
+
+    private void CreateItems()
     {
         GameObject newPannel = null;
-        UpdateChallenge newPannelComponent = null;
-        foreach(Challenge challenge in GameManager.Instance.CurrentUser.challengeList)
+        UpgradeItemsPannel newPannelComponent = null;
+        foreach(Items items in GameManager.Instance.CurrentUser.itemsList)
         {
-            newPannel = Instantiate(upgradeChallengePannelTemplate, upgradeChallengePannelTemplate.transform.parent);
-            newPannelComponent = newPannel.GetComponent<UpdateChallenge>();
-            newPannelComponent.SetValues(challenge);
+            newPannel = Instantiate(upgradeItemsPannelTemplate, upgradeItemsPannelTemplate.transform.parent);
+            newPannelComponent = newPannel.GetComponent<UpgradeItemsPannel>();
             newPannel.SetActive(true);
-            upgradeChallengePannel.Add(newPannelComponent);
+            upgradeItemsPannels.Add(newPannelComponent);
         }
     }
     public void OnClickJelly()

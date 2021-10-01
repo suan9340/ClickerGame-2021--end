@@ -28,6 +28,9 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] private GameObject ReturnGame;
     private bool isReturnGame;
 
+    [Header("소리")]
+    [SerializeField] private Slider slider;
+
     [SerializeField] private GameObject setHide;
 
     #region 상점
@@ -142,4 +145,9 @@ public class ButtonManager : MonoBehaviour
         outGame.SetActive(false);
     }
 
+    public void SliderValueSet(AudioSource _audio)
+    {
+
+        slider.value = _audio.volume;
+    }
 }
