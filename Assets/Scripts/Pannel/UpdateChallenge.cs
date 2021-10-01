@@ -9,7 +9,7 @@ public class UpdateChallenge : MonoBehaviour
     [SerializeField] private Button CompleteBtn;
     [SerializeField] private Text challengeCompensation;
 
-    private bool isadVan = true;
+    //private bool isadVan = true;
 
     private Challenge challenge;
 

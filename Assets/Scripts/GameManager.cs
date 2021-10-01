@@ -13,18 +13,10 @@ public class GameManager : MonoSingleTon<GameManager>
     private UIManager uiManager = null;
     public UIManager UI { get { return uiManager; } }
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.T))
-        {
-            ResetEvery();
-        }
-    }
     private void Awake()
     {
-        // 안드로이드 빌드시 Application.persistentDataPath로 수정해야 빌드됨
-        SAVE_PATH = Application.dataPath + "/Save";
-        //SAVE_PATH = Application.persistentDataPath + "/Save";
+        //SAVE_PATH = Application.dataPath + "/Save";
+        SAVE_PATH = Application.persistentDataPath + "/Save";
         if (Directory.Exists(SAVE_PATH) == false)
         {
             Directory.CreateDirectory(SAVE_PATH);
@@ -56,8 +48,8 @@ public class GameManager : MonoSingleTon<GameManager>
 
     public void SaveToJson()
     {
-        SAVE_PATH = Application.dataPath + "/Save";
-        //SAVE_PATH = Application.persistentDataPath + "/Save";
+        //SAVE_PATH = Application.dataPath + "/Save";
+        SAVE_PATH = Application.persistentDataPath + "/Save";
         string json = JsonUtility.ToJson(user, true);
         File.WriteAllText(SAVE_PATH + SAVE_FILENAME, json, System.Text.Encoding.UTF8);
     }

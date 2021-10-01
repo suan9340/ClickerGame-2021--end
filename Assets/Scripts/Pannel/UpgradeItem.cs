@@ -82,14 +82,14 @@ public class UpgradeItem : MonoBehaviour
         if (item.amount > 19) return;
         index++;
         //Debug.Log(index); // 1부터 아이언 2
-        itemImage.sprite=tearSprite[index];
-       
+        itemImage.sprite = tearSprite[index];
+
     }
 
-        private void Check()
+    private void Check()
     {
         index = item.amount;
-        if(index>19)
+        if (index > 19)
         {
             itemImage.sprite = tearSprite[19];
         }
@@ -98,5 +98,5 @@ public class UpgradeItem : MonoBehaviour
             itemImage.sprite = tearSprite[index];
         }
     }
-   
+
 }

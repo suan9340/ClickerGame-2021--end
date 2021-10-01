@@ -10,10 +10,9 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject upgradePannelTemplate = null;
     [SerializeField] private GameObject upgradeItemPannelTemplate = null;
-    [SerializeField] private GameObject upgradeChallengePannelTemplate = null;
+    //[SerializeField] private GameObject upgradeChallengePannelTemplate = null;
     [SerializeField] private GameObject upgradeItemsPannelTemplate = null;
 
-    [SerializeField] private AudioClip clickAudio;
     [SerializeField] private Transform pool = null;
     [SerializeField] private JellyText jellyTextTemplate = null;
 
@@ -47,6 +46,7 @@ public class UIManager : MonoBehaviour
         UpdateJellyPanel();
         CreatePannels();
         CreateItem();
+        CreateItems();
         //CreateChallenge();
     }
 
@@ -102,6 +102,7 @@ public class UIManager : MonoBehaviour
         {
             newPannel = Instantiate(upgradeItemsPannelTemplate, upgradeItemsPannelTemplate.transform.parent);
             newPannelComponent = newPannel.GetComponent<UpgradeItemsPannel>();
+            newPannelComponent.SetValues(items);
             newPannel.SetActive(true);
             upgradeItemsPannels.Add(newPannelComponent);
         }
